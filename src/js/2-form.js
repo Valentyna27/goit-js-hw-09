@@ -7,10 +7,10 @@ const form = document.querySelector('form');
 
 // Setting up the "input" event listener"
 form.addEventListener('input', event => {
-  if (event.target.nodeName === 'INPUT') {
-    formData.email = event.target.elements.email.value;
-  } else if (event.target.nodeName === 'TEXTAREA') {
-    formData.message = event.target.elements.message.value;
+  if (event.target.name === 'email') {
+    formData.email = event.target.value;
+  } else if (event.target.name === 'message') {
+    formData.message = event.target.value;
   }
   const jsonObject = JSON.stringify(formData);
   localStorage.setItem('feedback-form-state', jsonObject);
